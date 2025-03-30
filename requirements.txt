@@ -1,0 +1,10 @@
+flask
+flask_cors
+flask_login
+secure-smtplib
+# email
+flask_sqlalchemy
+sqlalchemy
+marshmallow_sqlalchemy
+bcrypt
+mysqlclient==2.2.7

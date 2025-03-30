@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="formSection">
+      <form
+        action="/save_apartment"
+        method="post"
+        panel-name="apartment"
+        id="Form"
+      >
+        <!-- <h3>Add New Apartment</h3> -->
+        <div class="row columns-edit-row">
+          <div class="col-md resize-edit">
+            <div class="dashboard-column">
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Apartment Information</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="apartmentid">Apartment Number:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="apartmentid"
+                        name="apartmentid"
+                        placeholder="Apartment Number"
+                        value="{{ data.appartmentid }}"
+                        disabled
+                      />
+                      <input
+                        type="hidden"
+                        name="apartmentid"
+                        value="{{ data.appartmentid }}"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="apartmentName">Apartment Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="apartmentName"
+                        name="apartmentName"
+                        placeholder="Apartment Name"
+                        value="{{data.apartmentname}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="managerid">Apartment Manager:</label>
+                      <select
+                        id="managerid"
+                        class="form-control select-form"
+                        name="managerid"
+                        required
+                      >
+                        <option value="" selected>
+                          Select Apartment Manager
+                        </option>
+                        {% for manager in managers %} {% if manager.managerid ==
+                        data.managerid %}
+                        <option value="{{ manager.managerid }}" selected>
+                          {{ manager.fname }} {{ manager.lname }}
+                        </option>
+                        {% else %}
+                        <option value="{{ manager.managerid }}">
+                          {{ manager.fname }} {{ manager.lname }}
+                        </option>
+                        {% endif %} {% endfor %}
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="typeOfResidence">Residence Type:</label>
+                      <select
+                        id="typeOfResidence"
+                        class="form-control select-form"
+                        name="typeOfResidence"
+                        required
+                      >
+                        <option value="" selected>Select Residence Type</option>
+                        {% for type in residencetype %} {% if type ==
+                        data.residenceType %}
+                        <option value="{{ type }}" selected>{{type}}</option>
+                        {% else %}
+                        <option value="{{ type }}">{{type}}</option>
+                        {% endif %} {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Contact</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="phoneNumber">Apartment Telephone:</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="Apartment Telephone"
+                        value="{{data.telephone}}"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Apartment Images</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <!-- <div class="form-group">
+                      <label for="image">Image:</label>
+                      <input type="file" id="imageInput" accept="image/*" />
+                      <div class="image-preview" id="imagePreview"></div>
+                    </div> -->
+                    <div class="form-group">
+                      <div class="image-field-header">
+                        <label for="image">Image:</label>
+                      </div>
+
+                      <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/*"
+                        style="display: none"
+                      />
+                      <div class="image-preview" id="imagePreview">
+                        <div class="custom-image-upload">
+                          <img
+                            src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/6dfed94f78923783.svg"
+                            alt="Upload Image"
+                            class="upload-icon"
+                          />
+                          <div class="upload-text">
+                            <div>Choose a file to upload</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="col-md resize-edit">
+            <div class="dashboard-column">
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Apartment Address</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="addressline">Apartment Address:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="addressline"
+                        name="addressline"
+                        placeholder="Apartment Address"
+                        value="{{data.addressline}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="state">State:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="state"
+                        name="state"
+                        placeholder="State"
+                        value="{{data.state}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="city">City:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="city"
+                        name="city"
+                        placeholder="City"
+                        value="{{data.city}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="zipcode">ZipCode:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="zipcode"
+                        name="zipcode"
+                        placeholder="Zipcode"
+                        value="{{data.zipcode}}"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Room List</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div style="padding-top: 20px">
+                      <table id="apartmentlinkedRoomTable" class="display">
+                        <thead>
+                          <tr>
+                            <th class="placenumber">Place Number</th>
+                            <th class="roomnumber">Room Number</th>
+                            <th class="address">Address</th>
+                            <th class="monthlyrent">Monthly Rent</th>
+                            <th class="available">Available</th>
+                            <th>View</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- <tr>
+                            <td><input type="text" name="place_number[]" /></td>
+                            <td><input type="text" name="room_number[]" /></td>
+                            <td><input type="text" name="address[]" /></td>
+                            <td><input type="text" name="monthly_rent[]" /></td>
+                            <td>
+                              <input type="checkbox" name="available[]" />
+                            </td>
+                            <td>
+                              <button type="button" class="view-button">
+                                View
+                              </button>
+                            </td>
+                          </tr> -->
+                          <!-- Data will be populated here via AJAX call -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="details-footer">
+          <button type="submit" class="btn btn-primary save-btn">Save</button>
+          <button
+            type="button"
+            data-id="{{data.appartmentid}}"
+            panel-name="apartments"
+            class="btn btn-primary delete-btn"
+            onclick="FormDeleteSubmit(this);"
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            panel-name="apartments"
+            onclick="NewFormSubmit(this);"
+            class="btn btn-primary new-btn"
+          >
+            New
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      type="text/javascript"
+      src="static/script/apartmentresidence.js"
+    ></script>
+    <script type="text/javascript" src="static/script/common.js"></script>
+  </body>
+</html>

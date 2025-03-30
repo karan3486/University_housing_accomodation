@@ -1,0 +1,305 @@
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+} */
+.containerAdvisor {
+  /* width: 2000px; */
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+h1,
+h2 {
+  color: #333;
+}
+/* table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+} */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+#formSection {
+  /* display: none; */
+  margin-top: 20px;
+}
+label {
+  display: flex;
+  margin-bottom: 5px;
+  color: #333;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 30px;
+  font-size: small;
+}
+.select-form {
+  width: 100%;
+  /* padding: 10px; */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 30px;
+  font-size: small;
+}
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.headers-container {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  /* line-height: 10px; */
+  /* top: 0; */
+  left: 0;
+  width: 100%;
+  background-color: #fafafa;
+  color: white;
+  padding: 20px;
+  z-index: 999;
+}
+
+.view-options {
+  display: flex;
+  list-style: none;
+  padding-right: 35px;
+}
+
+.view-options li {
+  margin-right: 10px;
+}
+
+.view-options li a.active {
+  background-color: #0056b3;
+  color: white;
+}
+
+.view-options li a {
+  display: inline-block;
+  padding: 2px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color: black;
+  text-decoration: none; /* Added to remove default underline */
+}
+
+.view-options li a:hover {
+  background-color: #0056b3;
+  color: white;
+  cursor: pointer;
+}
+
+.details-view {
+  margin-left: 10px; /* Adjusting spacing between links */
+}
+
+/*.details-footer {
+  margin-top: 20px; 
+  text-align: right; 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #fafafa;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}*/
+.details-footer {
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  width: auto; /* Allow width to adjust based on content */
+  background-color: #fafafa;
+  color: black; /* Assuming you meant black text instead of white */
+  text-align: right; /* Align buttons to the right */
+  padding: 10px;
+  width: 100%;
+}
+
+/* Style for the buttons */
+.details-footer .btn {
+  margin-left: 10px; /* Add spacing between buttons */
+}
+
+.btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Adjust spacing between buttons */
+  background-color: #cdd0cc;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #cdd0cc;
+  color: #fff;
+}
+
+.save-btn {
+  color: #178710; /* Change color for save button */
+  margin-right: 0; /* Remove left margin for the rightmost button */
+}
+
+.delete-btn {
+  color: rgb(194, 5, 5); /* Change color for delete button */
+  margin-right: 0; /* Remove left margin for the rightmost button */
+}
+
+.new-btn {
+  color: #06619e; /* Change color for new button */
+}
+
+.columns-edit-row {
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
+.col-md.resize-edit {
+  margin: 0px 0px 0px 0px;
+  margin-bottom: 10px;
+}
+
+section.box-typical.box-typical-dashboard {
+  background-color: #fafafa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.form-group {
+  margin-bottom: 1rem;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+.image-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.remove-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: inline-block;
+  padding: 2px 15px;
+  border-radius: 10px;
+  color: red;
+  text-decoration: none !important;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+/* .remove-button:hover::after {
+  content: "Remove Image";
+  position: absolute;
+} */
+
+.loader {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader-image {
+  width: 100px;
+  height: 100px;
+}
+
+.custom-image-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px dashed #ccc;
+  padding: 20px;
+  cursor: pointer;
+  min-height: 200px; /* Adjust height as needed */
+}
+
+.upload-icon {
+  width: 100px; /* Adjust icon size as needed */
+  height: 100px; /* Adjust icon size as needed */
+  margin-bottom: 10px; /* Adjust spacing between icon and text as needed */
+}
+
+.upload-text {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+.error {
+  color: red;
+  font-weight: bold;
+}
+.success {
+  color: rgb(9, 242, 37);
+  font-weight: bold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}

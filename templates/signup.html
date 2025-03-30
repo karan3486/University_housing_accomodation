@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Sign Up</title>
+    <link
+      href="/Content/themes/Student/Site.css?v=20220129"
+      rel="stylesheet/less"
+      media="all"
+    />
+
+    <!-- JS -->
+    <script src="/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <style>
+      body {
+        background-color: #ffffff;
+        font-size: 82%;
+        font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica,
+          Sans-Serif;
+        margin: 0;
+        padding: 0;
+        color: #696969;
+      }
+
+      #header {
+        background-image: url(https://my.sfbu.edu/Content/themes/Student/../base/../../../Images/mySFBU-white.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100px;
+        margin: 10px 1%;
+      }
+
+      fieldset {
+        padding: 0em 1.4em 1.4em 1.4em;
+        margin: 1.5em 0 1.5em 0.5em;
+        background-color: #ffffff;
+        clear: left;
+      }
+
+      legend {
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 0.2em 0.3em 0.8em 0.3em;
+      }
+
+      .display-label,
+      .editor-label {
+        float: left;
+        width: 30%;
+        max-width: 200px;
+        min-height: 20px;
+        margin-right: 0.5em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: left;
+        font-weight: bold;
+        white-space: normal;
+        vertical-align: text-bottom;
+        clear: left;
+      }
+
+      .display-field,
+      .editor-field {
+        float: left;
+        width: 68%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        min-height: 20px;
+        vertical-align: middle;
+      }
+
+      p,
+      ul,
+      ol {
+        margin-bottom: 5px;
+        clear: left;
+      }
+
+      input[type="submit"] {
+        margin-left: 15%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 210px;
+        cursor: pointer;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #f45332;
+        text-transform: uppercase;
+        border-color: transparent;
+        padding: 11px 20px;
+      }
+
+      #main {
+        background-color: #ffffff;
+        margin: 10px 1%;
+      }
+
+      #footer {
+        color: #ff0000;
+        text-align: center;
+        line-height: normal;
+        margin: 0;
+        font-size: 0.9em;
+        height: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 200px;
+        border: 1px solid #cccccc;
+      }
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+      .success {
+        color: rgb(9, 242, 37);
+        font-weight: bold;
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+
+    <!-- End Google Tag Manager -->
+
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NBKB7Q2"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="page">
+      <div id="header">
+        <!-- <div id="logindisplay">
+          <a href="/Account/LogOn">Log On</a>
+        </div> -->
+      </div>
+      <div id="main">
+        <div id="errormessage"></div>
+
+        <script type="text/javascript">
+          $(document).ready(function () {
+            //set focus
+            $(".onfocus").focus();
+          });
+        </script>
+        <div class="error-login">
+          {% with messages = get_flashed_messages(with_categories=true) %} {% if
+          messages %}
+          <ul>
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %} {% endwith %}
+        </div>
+        <fieldset>
+          <legend>Sign Up</legend>
+          <form action="/createuser" method="post">
+            <p>Please enter your details to sign up.</p>
+            <div class="editor-label">User ID</div>
+            <div class="editor-field">
+              <input
+                class="onfocus"
+                data-val="true"
+                data-val-nohtmltag='No characters "&lt;" or ">", special string "&amp;#" allowed'
+                data-val-required="The User ID field is required."
+                id="UserID"
+                name="UserID"
+                type="text"
+                value="{{userid}}"
+              />
+              <span
+                class="field-validation-valid"
+                data-valmsg-for="UserID"
+                data-valmsg-replace="true"
+              ></span>
+            </div>
+            <div class="editor-label">
+              <label for="Password">Password</label>
+            </div>
+            <div class="editor-field">
+              <input
+                data-val="true"
+                data-val-nohtmltag='No characters "&lt;" or ">", special string "&amp;#" allowed'
+                data-val-required="The Password field is required."
+                id="Password"
+                name="Password"
+                type="password"
+                value="{{password}}"
+              />
+              <span
+                class="field-validation-valid"
+                data-valmsg-for="Password"
+                data-valmsg-replace="true"
+              ></span>
+            </div>
+            <div class="editor-label">
+              <label for="ConfirmPassword">Confirm Password</label>
+            </div>
+            <div class="editor-field">
+              <input
+                data-val="true"
+                data-val-nohtmltag='No characters "&lt;" or ">", special string "&amp;#" allowed'
+                data-val-required="The Confirm Password field is required."
+                id="ConfirmPassword"
+                name="ConfirmPassword"
+                type="password"
+                value="{{password}}"
+              />
+              <span
+                class="field-validation-valid"
+                data-valmsg-for="ConfirmPassword"
+                data-valmsg-replace="true"
+              ></span>
+            </div>
+            {% if otp %}
+            <div class="editor-label">OTP</div>
+            <div class="editor-field">
+              <input
+                class="onfocus"
+                data-val="true"
+                id="Otp"
+                name="Otp"
+                type="text"
+                value=""
+              />
+            </div>
+            {% else %}
+            <div hidden class="editor-label">OTP</div>
+            <div hidden class="editor-field">
+              <input
+                class="onfocus"
+                data-val="true"
+                id="Otp"
+                name="Otp"
+                type="text"
+                value=""
+              />
+            </div>
+            {%endif%}
+            <p>
+              <input class="stubtn" type="submit" value="Sign Up" />
+            </p>
+          </form>
+        </fieldset>
+      </div>
+      <div id="footer">
+        &copy;2024 San Francisco Bay University. All rights reserved.&nbsp;OSCII
+        V1.0.7.1
+        <span id="loadingtime"></span>
+      </div>
+    </div>
+  </body>
+</html>

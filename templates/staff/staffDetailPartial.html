@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="formSection">
+      <form action="/save_staff" method="post" panel-name="staff" id="Form">
+        <!-- <h3>Add New Hall</h3> -->
+        <div class="row columns-edit-row">
+          <div class="col-md resize-edit">
+            <div class="dashboard-column">
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Staff Information</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="staffid">Staff Id:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="staffid"
+                        name="staffid"
+                        placeholder="Staff Id"
+                        value="{{staff.staffid}}"
+                        required
+                      />
+                      <input
+                        type="hidden"
+                        name="staffid"
+                        value="{{ staff.staffid}}"
+                      />
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="fName">Staff First Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fName"
+                        name="fName"
+                        placeholder="Staff First Name"
+                        value="{{ staff.fname}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="lName">Staff Last Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lName"
+                        name="lName"
+                        placeholder="Staff Last Name"
+                        value="{{ staff.lName}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="positionOfStaff">Position:</label>
+                      <select
+                        id="positionOfStaff"
+                        class="form-control select-form"
+                        name="positionOfStaff"
+                        required
+                      >
+                        <option selected>Select Position</option>
+                        <option value="Professor">Professor</option>
+                        <option value="Associate Professor">
+                          Associate Professor
+                        </option>
+                        <option value="Assistant Professor">
+                          Assistant Professor
+                        </option>
+                        <option value="Researcher">Researcher</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Staff Address</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="staffAddress">Address:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="staffAddress"
+                        name="staffAddress"
+                        placeholder="Address"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="state">State:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="state"
+                        name="state"
+                        placeholder="State"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="city">City:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="city"
+                        name="city"
+                        placeholder="City"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="zipcode">ZipCode:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="zipcode"
+                        name="zipcode"
+                        placeholder="Zipcode"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="col-md resize-edit">
+            <div class="dashboard-column">
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Staff Contact</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="mobileNumber">Mobile Number:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="mobileNumber"
+                        name="mobileNumber"
+                        placeholder="Mobile Number"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="roomNumber">Gender:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="roomNumber"
+                        name="roomNumber"
+                        placeholder="Gender"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="details-footer">
+          <button type="submit" class="btn btn-primary save-btn">Save</button>
+          <button type="submit" class="btn btn-primary delete-btn">
+            Delete
+          </button>
+          <button type="submit" class="btn btn-primary new-btn">New +</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

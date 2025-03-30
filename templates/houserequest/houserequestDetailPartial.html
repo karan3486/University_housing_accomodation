@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="formSection">
+      <form
+        action="/save_houserequest"
+        method="post"
+        panel-name="houserequest"
+        id="Form"
+      >
+        <!-- <h3>Add New Hall</h3> -->
+        <div class="row columns-edit-row">
+          <div class="col-md resize-edit">
+            <div class="dashboard-column">
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Housing Request Detail</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="advisorid">Request Id:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="advisorid"
+                        name="advisorid"
+                        placeholder="Request Id"
+                        value="{{request.requestid}}"
+                        disabled
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="mobileNumber">Request Type:</label>
+                      <select
+                        id="typeOfResidence"
+                        class="form-control select-form"
+                        name="typeOfResidence"
+                        required
+                      >
+                        <option>Select Residence Type</option>
+                        {% for type in residencetype %} {% if type ==
+                        request.residenceType %}
+                        <option value="{{ type }}" selected>{{type}}</option>
+                        {% else %}
+                        <option value="{{ type }}">{{type}}</option>
+                        {% endif %} {% endfor %}
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Date of Request:</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        value="{{request.dateofRequest}}"
+                        readonly
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="roomNumber">Status:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="roomNumber"
+                        name="roomNumber"
+                        placeholder="Room Number"
+                        value="{{request.currentStatus}}"
+                        readonly
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="roomNumber">Trimester:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="roomNumber"
+                        name="roomNumber"
+                        placeholder="Room Number"
+                        {%
+                        if
+                        request.student
+                        %}
+                        value="{{request.student.trimester}}"
+                        {%
+                        endif
+                        %}
+                        readonly
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div class="col-md resize-edit">
+            <div class="dashboard-column">
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Applicant Information</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="advisorid">Student Id:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="advisorid"
+                        name="advisorid"
+                        placeholder="Request Id"
+                        {%
+                        if
+                        request.student
+                        %}
+                        value="{{request.student.studentid}}"
+                        {%
+                        endif
+                        %}
+                        disabled
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="fName">Student Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fName"
+                        name="fName"
+                        placeholder="Student First Name"
+                        {%
+                        if
+                        request.student
+                        %}
+                        value="{{ request.student.fname}} {{ request.student.lname}}"
+                        {%
+                        endif
+                        %}
+                        disabled
+                      />
+                    </div>
+                    <!-- <div class="form-group">
+                      <label for="fName">Last Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fName"
+                        name="fName"
+                        placeholder="Student First Name"
+                        value="{{ request.lname}}"
+                        disabled
+                      />
+                    </div> -->
+                    <div class="form-group">
+                      <label for="fName">Gender:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fName"
+                        name="fName"
+                        placeholder="Student First Name"
+                        {%
+                        if
+                        request.student
+                        %}
+                        value="{{request.student.gender}}"
+                        {%
+                        endif
+                        %}
+                        disabled
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        value="{{request.student.email}}"
+                        readonly
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="roomNumber">Mobile:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="roomNumber"
+                        name="roomNumber"
+                        placeholder="Room Number"
+                        {%
+                        if
+                        request.student
+                        %}
+                        value="{{request.student.mobile}}"
+                        {%
+                        endif
+                        %}
+                        readonly
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <!-- <div class="col-md resize-edit">
+            <div class="dashboard-column">
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Applicant Contact</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        value="{{request.email}}"
+                        readonly
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="roomNumber">Mobile:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="roomNumber"
+                        name="roomNumber"
+                        placeholder="Room Number"
+                        value="{{request.mobile}}"
+                        readonly
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="fName">Nationality:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fName"
+                        name="fName"
+                        placeholder="Student First Name"
+                        value="{{ request.nationality}}"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div> -->
+        </div>
+        <div class="details-footer">
+          <button
+            type="button"
+            request-id="{{request.requestid}}"
+            command="approve"
+            onclick="ApproveHouseRequest(this);"
+            class="btn btn-primary save-btn"
+          >
+            Approve
+          </button>
+          <button
+            type="button"
+            request-id="{{request.requestid}}"
+            command="reject"
+            onclick="ApproveHouseRequest(this);"
+            class="btn btn-primary delete-btn"
+          >
+            Reject
+          </button>
+          <button type="button" class="btn btn-primary new-btn">New +</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</html>

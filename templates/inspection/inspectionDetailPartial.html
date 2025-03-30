@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="formSection">
+      <form id="inspectionForm">
+        <h3>Add New Inspection</h3>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="staffName">Staff Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="staffName"
+              name="staffName"
+              placeholder="Staff Name"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="hall">Hall No:</label>
+            <select id="hall" class="form-control" name="hall" required>
+              <option selected>Select Hall</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="datetime">Datetime:</label>
+            <input
+              type="datetime"
+              class="form-control"
+              id="datetime"
+              name="datetime"
+              placeholder="Datetime"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="roomNumber">Room Number:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="roomNumber"
+              name="roomNumber"
+              placeholder="Room Number"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="address">Address:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              name="address"
+              placeholder="Address"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="condition">Good Condition:</label>
+            <select
+              id="condition"
+              class="form-control"
+              name="condition"
+              required
+            >
+              <option selected>Select Condition</option>
+              <option value="Computer Science">Good</option>
+              <option value="Engineering">Bad</option>
+            </select>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="comments">Comments:</label>
+            <textarea
+              class="form-control"
+              id="comments"
+              name="comments"
+              placeholder="Comments"
+            ></textarea>
+          </div>
+        </div>
+        <div class="details-footer">
+          <button type="submit" class="btn btn-primary save-btn">Save</button>
+          <button type="submit" class="btn btn-primary delete-btn">
+            Delete
+          </button>
+          <button type="submit" class="btn btn-primary new-btn">New</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

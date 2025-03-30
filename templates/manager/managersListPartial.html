@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager Management System</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"
+    />
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="static/script/common.js"></script>
+    <script type="text/javascript" src="static/script/datagrid.js"></script>
+  </head>
+  <body>
+    {% include "navigation.html" %}
+    <div class="mdl-layout__content mdl-color--grey-100 maindiv">
+      <div class="">
+        <div class="headers-container">
+          <label style="font-size: 20px; margin-left: 250px">Managers</label>
+          <ul class="view-options">
+            <li>
+              <a href="/managers" class="table-view active">Table View</a>
+            </li>
+            <li>
+              <a onclick="RenderManagerDetail(0);" class="details-view"
+                >Details</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="containerAdvisor">
+          <div class="maintable" style="padding-top: 20px">
+            <table id="managersTable" class="display">
+              <thead>
+                <tr>
+                  <th>Manager Id</th>
+                  <th>Manager Name</th>
+                  <th>Email</th>
+                  <th>Contact</th>
+                  <th>Gender</th>
+                  <th>View/Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Data will be populated here via AJAX call -->
+              </tbody>
+            </table>
+          </div>
+          <div class="detailstable" style="padding-top: 20px"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!--<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"
+    />
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> -->
+    <link rel="stylesheet" href="static/css/advisors.css" />
+    <link rel="stylesheet" href="static/css/dataTable.css" />
+    <script type="text/javascript" src="static/script/datagrid.js"></script>
+    <script type="text/javascript" src="static/script/manager.js"></script>
+  </body>
+</html>

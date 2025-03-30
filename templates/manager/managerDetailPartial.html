@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="formSection">
+      <form action="/save_hall" method="post" panel-name="hall" id="Form">
+        <!-- <h3>Add New Hall</h3> -->
+        <div class="row columns-edit-row">
+          <div class="col-md resize-edit">
+            <div class="dashboard-column">
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Manager Information</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="managerid">Manager ID:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="managerid"
+                        name="managerid"
+                        placeholder="Hall Number"
+                        value="{{ data.managerid }}"
+                        disabled
+                      />
+                      <input
+                        type="hidden"
+                        name="managerid"
+                        value="{{ data.managerid }}"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="managerName">Manager Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="managerName"
+                        name="managerName"
+                        placeholder="Manager Name"
+                        value="{{data.fname}} {{data.lname}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="managerType">Manager Type:</label>
+                      <select
+                        id="managerType"
+                        class="form-control select-form"
+                        name="managerType"
+                        required
+                      >
+                        <option value="" selected>Select Manager Type</option>
+                        {% for type in residencetype %} {% if type ==
+                        data.ManagerType %}
+                        <option value="{{ type }}" selected>{{type}}</option>
+                        {% else %}
+                        <option value="{{ type }}">{{type}}</option>
+                        {% endif %} {% endfor %}
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select
+                        id="gender"
+                        class="form-control select-form"
+                        name="gender"
+                        required
+                      >
+                      <option value="" {% if not data.gender %}selected{% endif %}>Select Gender</option>
+                      <option value="Male" {% if data.gender == "Male" %}selected{% endif %}>Male</option>
+                      <option value="Female" {% if data.gender == "Female" %}selected{% endif %}>Female</option>
+                        
+                      </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          placeholder="Email"
+                          value="{{data.email}}"
+                          required
+                        />
+                      </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="col-md resize-edit">
+            <div class="dashboard-column">
+              <section class="box-typical box-typical-dashboard">
+                <header class="box-typical-header panel-heading">
+                  <h3 class="panel-title">Contact</h3>
+                </header>
+                <div class="box-typical-body panel-body">
+                  <div class="col-lg-12 pd-15">
+                    <div class="form-group">
+                      <label for="addressline">Manager Address:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="addressline"
+                        name="addressline"
+                        placeholder="Hall Address"
+                        value="{{data.addressline}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="state">State:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="state"
+                        name="state"
+                        placeholder="State"
+                        value="{{data.state}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="city">City:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="city"
+                        name="city"
+                        placeholder="City"
+                        value="{{data.city}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="zipcode">ZipCode:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="zipcode"
+                        name="zipcode"
+                        placeholder="Zipcode"
+                        value="{{data.zipcode}}"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="mobile"
+                          name="mobile"
+                          placeholder="Mobile"
+                          value="{{data.mobile}}"
+                          required
+                        />
+                      </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row columns-edit-row">
+        <div class="col-md resize-edit">
+            <div class="dashboard-column">
+          <section class="box-typical box-typical-dashboard">
+            <header class="box-typical-header panel-heading">
+                {% if "Residence" == data.ManagerType %}
+              <h3 class="panel-title">Apartment List</h3>
+                {% else %}  
+                <h3 class="panel-title">Hall List</h3>
+                    {% endif %}
+              
+            </header>
+            <div class="box-typical-body panel-body">
+              <div class="col-lg-12 pd-15">
+                <div style="padding-top: 20px">
+                  <table id="halllinkedRoomTable" class="display">
+                    <thead>
+                      <tr>
+                        <th class="placenumber">Hall Number</th>
+                        <th class="roomnumber">Hall Name</th>
+                        <th class="address">Address</th>
+                        <th class="monthlyrent">Monthly Rent</th>
+                        <th class="available">Available</th>
+                        <th>View</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- <tr>
+                        <td><input type="text" name="place_number[]" /></td>
+                        <td><input type="text" name="room_number[]" /></td>
+                        <td><input type="text" name="address[]" /></td>
+                        <td><input type="text" name="monthly_rent[]" /></td>
+                        <td>
+                          <input type="checkbox" name="available[]" />
+                        </td>
+                        <td>
+                          <button type="button" class="view-button">
+                            View
+                          </button>
+                        </td>
+                      </tr> -->
+                      <!-- Data will be populated here via AJAX call -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+            </div>
+          </div>
+        </div>
+        <div class="details-footer">
+          <button type="submit" class="btn btn-primary save-btn">Save</button>
+          <button
+            type="button"
+            data-id="{{data.managerid}}"
+            panel-name="manager"
+            class="btn btn-primary delete-btn"
+            onclick="FormDeleteSubmit(this);"
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            panel-name="manager"
+            onclick="NewFormSubmit(this);"
+            class="btn btn-primary new-btn"
+          >
+            New
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      type="text/javascript"
+      src="static/script/hallresidence.js"
+    ></script>
+    <script type="text/javascript" src="static/script/common.js"></script>
+  </body>
+</html>

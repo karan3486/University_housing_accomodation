@@ -1,0 +1,74 @@
+2024-03-27 14:12:38 INFO     App started
+2024-03-27 14:14:53 INFO     App started
+2024-03-27 14:18:42 INFO     Authenticating user...
+2024-03-27 14:18:42 ERROR    b''
+2024-03-27 14:18:42 ERROR    An error occurred
+NoneType: None
+2024-03-27 14:18:56 INFO     Authenticating user...
+2024-03-27 14:18:56 ERROR    b''
+2024-03-27 14:18:56 ERROR    An error occurred
+NoneType: None
+2024-03-27 14:19:19 INFO     App started
+2024-03-27 14:19:39 INFO     Authenticating user...
+2024-03-27 14:19:40 ERROR    b''
+2024-03-27 14:19:41 ERROR    An error occurred
+NoneType: None
+2024-03-27 15:19:11 INFO     App started
+2024-03-27 15:19:30 INFO     Entity namespace for "Users" has no property "userid"
+2024-03-27 15:20:06 INFO     App started
+2024-03-27 15:21:16 INFO     App started
+2024-03-27 15:24:46 INFO     App started
+2024-03-27 15:32:30 INFO     App started
+2024-03-27 15:33:30 INFO     App started
+2024-03-27 15:36:19 INFO     App started
+2024-03-27 15:40:14 INFO     App started
+2024-03-27 15:40:22 INFO     Authenticating user...
+2024-03-27 15:40:22 ERROR    b''
+2024-03-27 15:40:22 ERROR    An error occurred
+NoneType: None
+2024-03-27 16:23:05 INFO     App started
+2024-03-27 16:23:15 INFO     Authenticating user...
+2024-03-27 16:23:15 ERROR    b''
+2024-03-27 16:23:15 ERROR    An error occurred
+NoneType: None
+2024-03-27 16:27:44 INFO     App started
+2024-03-27 16:27:51 INFO     Authenticating user...
+2024-03-27 16:27:51 ERROR    b''
+2024-03-27 16:27:51 ERROR    An error occurred
+NoneType: None
+2024-03-27 17:06:11 INFO     Authenticating user...
+2024-03-27 17:06:11 ERROR    b''
+2024-03-27 17:06:11 ERROR    An error occurred
+NoneType: None
+2024-03-27 17:06:45 INFO     App started
+2024-03-27 17:07:13 INFO     Authenticating user...
+2024-03-27 17:07:13 ERROR    b''
+2024-03-27 17:07:13 ERROR    An error occurred
+NoneType: None
+2024-03-27 17:29:15 INFO     App started
+2024-03-27 17:30:47 INFO     App started
+2024-03-27 17:30:56 INFO     Authenticating user...
+2024-03-27 17:30:56 ERROR    b''
+2024-03-27 17:30:56 ERROR    An error occurred
+NoneType: None
+2024-03-27 17:31:11 INFO     Authenticating user...
+2024-03-27 17:31:11 ERROR    b''
+2024-03-27 17:31:11 ERROR    An error occurred
+NoneType: None
+2024-03-27 17:32:24 INFO     App started
+2024-03-27 17:33:04 INFO     Authenticating user...
+2024-03-27 17:33:04 ERROR    b''
+2024-03-27 17:33:04 ERROR    An error occurred
+NoneType: None
+2024-03-27 17:34:01 INFO     Authenticating user...
+2024-03-27 17:34:01 ERROR    b''
+2024-03-27 17:34:01 ERROR    An error occurred
+NoneType: None
+2024-03-27 19:49:46 INFO     App started
+2024-03-27 19:50:18 INFO     App started
+2024-03-27 19:53:55 INFO     App started
+2024-03-27 20:38:13 INFO     App started
+2024-03-27 20:38:57 INFO     Authenticating user...
+2024-03-27 20:38:57 ERROR    b''
+2024-03-27 20:38:57 ERROR    An error occurred
+NoneType: None
