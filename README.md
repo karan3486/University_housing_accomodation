@@ -1,13 +1,10 @@
 
 # University Housing Accommodation
 
-![housing1](https://github.com/user-attachments/assets/80497ab5-c6d2-4dac-a861-7f909c500105)
-
-![housing2](https://github.com/user-attachments/assets/866ea574-394a-4361-a9f7-230f668ce392)
-
-![housing3](https://github.com/user-attachments/assets/84db5587-7c6c-466d-9346-97d38c5f6940)
-
-![housing4](https://github.com/user-attachments/assets/1b8719ea-6d9e-45e9-92b3-805acd7732fd)
+![image](https://github.com/user-attachments/assets/1069fcea-051d-4f6d-9c14-3c299335d5af)
+![image](https://github.com/user-attachments/assets/dbb2b1af-cd43-4f89-9e81-be7410ee793c)
+![image](https://github.com/user-attachments/assets/ce582bc0-801e-4319-8ad9-65cf0b9fc533)
+![image](https://github.com/user-attachments/assets/f097d604-0229-49e3-825b-79529cfb353a)
 
 
 
